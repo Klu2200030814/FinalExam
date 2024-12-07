@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/exam</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">root</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+
+        <!-- Option 1: Manual Mapping -->
+        <mapping class="com.klu.jfsd.exam.Vehicle"/>
+        <mapping class="com.klu.jfsd.exam.Car"/>
+        <mapping class="com.klu.jfsd.exam.Truck"/>
+
+        <!-- Option 2: Automatic Scanning -->
+        <!-- <property name="hibernate.archive.autodetection">class</property>
+        <property name="hibernate.packagesToScan">com.klu.jfsd.exam</property> -->
+    </session-factory>
+</hibernate-configuration>
